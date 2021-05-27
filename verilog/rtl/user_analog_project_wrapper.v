@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
-
 `default_nettype none
+`include "bgr_proj.v"
 /*
  *-------------------------------------------------------------
  *
@@ -122,7 +122,7 @@ module user_analog_project_wrapper (
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_analog_proj_example mprj (
+bgr_proj mprj (
     `ifdef USE_POWER_PINS
         .vdda1(vdda1),  // User area 1 3.3V power
         .vdda2(vdda2),  // User area 2 3.3V power
@@ -165,7 +165,8 @@ user_analog_proj_example mprj (
     .gpio_noesd(gpio_noesd),
 
     // Dedicated analog
-    .io_analog(io_analog),
+    .io_analog(io_analog),  // reset is io_analog[5] (mprj_io[19]). 
+                            // vbg is io_analog[4] (mprj_io[18])
     .io_clamp_high(io_clamp_high),
     .io_clamp_low(io_clamp_low),
 

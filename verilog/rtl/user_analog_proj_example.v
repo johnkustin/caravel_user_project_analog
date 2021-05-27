@@ -168,14 +168,6 @@ module user_analog_proj_example (
     // IRQ
     assign irq = 3'b000;	// Unused
 
-    // LA --- unused (no need to connect to anything)
-    // assign la_data_out = {128{1'b0}};	// Unused
-
-    // Instantiate the POR.  Connect the digital power to user area 1
-    // VCCD, and connect the analog power to user area 1 VDDA.
-
-    // Monitor the 3.3V output with mprj_io[10] = gpio_analog[3]
-    // Monitor the 1.8V outputs with mprj_io[11,12] = io_out[11,12]
 
     example_por por1 (
 	`ifdef USE_POWER_PINS

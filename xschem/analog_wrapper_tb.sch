@@ -72,6 +72,7 @@ N -60 -110 0 -110 { lab=#net24}
 N -60 -90 0 -90 { lab=#net25}
 N -60 -70 0 -70 { lab=#net26}
 N -60 -50 0 -50 { lab=#net27}
+N 450 10 460 10 {}
 C {user_analog_project_wrapper.sym} 150 -110 0 0 {name=x1}
 C {devices/vsource.sym} 590 -220 0 0 {name=V1 value="PWL(0.0 0 400u 0 5.4m 3.3)"}
 C {devices/vsource.sym} 690 -220 0 0 {name=V2 value="PWL(0.0 0 300u 0 5.3 1.8)"}
