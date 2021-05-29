@@ -12,7 +12,7 @@ module bgr(
 );
 
     wire vbg, porst, gnd, vdd;
-    reg vbg_r, vbg_r_n;
+    reg vbg_r;
 
     // This is a behavioral model!  Actual circuit is a pair of 
     // differently sized PNPs surrounded by ratiometrically tuned
@@ -22,16 +22,12 @@ module bgr(
     // 970.312 mV
     
     initial begin
-        vbg_r = 1'b0;
+    vbg_r <= 1'b0;
     end
 
-    always begin
-        #1
-        vbg_r_n = (porst & (~vbg_r)) ? 1'b1 : (vbg_r & ~porst ? 1'b1 : 1'b0); // vbg & porst is a dont care
-    end
 
-    always @(vdd) begin
-        vbg_r <= vbg_r_n;
+    always @(posedge porst) begin
+        #500 vbg_r <= 1;
     end
 
     assign vbg = vbg_r;

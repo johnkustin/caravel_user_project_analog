@@ -24,13 +24,13 @@
  * mprj_io[20]  ---                       ---                    user_analog[6]  clamp[2]
  * mprj_io[19]  ---                       ---                    user_analog[5]  clamp[1]
  * mprj_io[18]  ---                       ---                    user_analog[4]  clamp[0]
- * mprj_io[17]  ---                       ---                    user_analog[3]
- * mprj_io[16]  ---                       ---                    user_analog[2]
+ * mprj_io[17]  ---                       ---                    user_analog[3] 
+ * mprj_io[16]  ---                       ---                    user_analog[2] 
  * mprj_io[15]  ---                       ---                    user_analog[1]
  * mprj_io[14]  ---                       ---                    user_analog[0]
  * mprj_io[13]  io_in/out/oeb/in_3v3[13]  gpio_analog/noesd[6]   ---
- * mprj_io[12]  io_in/out/oeb/in_3v3[12]  gpio_analog/noesd[5]   ---
- * mprj_io[11]  io_in/out/oeb/in_3v3[11]  gpio_analog/noesd[4]   ---
+ * mprj_io[12]  io_in/out/oeb/in_3v3[12]  gpio_analog/noesd[5]   --- ** porst
+ * mprj_io[11]  io_in/out/oeb/in_3v3[11]  gpio_analog/noesd[4]   --- ** vbg
  * mprj_io[10]  io_in/out/oeb/in_3v3[10]  gpio_analog/noesd[3]   ---
  * mprj_io[9]   io_in/out/oeb/in_3v3[9]   gpio_analog/noesd[2]   ---
  * mprj_io[8]   io_in/out/oeb/in_3v3[8]   gpio_analog/noesd[1]   ---
@@ -102,14 +102,9 @@ module bgr_proj (
     wire [`ANALOG_PADS-1:0] io_analog;
 
     `ifdef USE_POWER_PINS
-    	assign io_clamp_high[0] = io_analog[4];
-    	assign io_clamp_low[0] = vssa1;
-        assign io_clamp_high[1] = io_analog[5];
-        assign io_clamp_low[1] = vssa1;
-
-	// Tie off remaining clamps
-    	assign io_clamp_high[2] = vssa1;
-    	assign io_clamp_low[2] = vssa1;
+	    // Tie off remaining clamps
+    	assign io_clamp_high[2:0] = vssa1;
+    	assign io_clamp_low[2:0] = vssa1;
     `endif
 
     bgr bgr (
@@ -117,8 +112,8 @@ module bgr_proj (
 	    .vdd(vccd1),
 	    .gnd(vssa1), // User area 1 analog ground
 	    `endif
-    .porst(io_analog[5]), // io_clamp_*[1] is connected accordingly
-    .vbg(io_analog[4]) // io_clamp_*[0] is connected accordingly
+    .porst(gpio_analog[5]), 
+    .vbg(gpio_analog[4]) 
     );
 
 endmodule

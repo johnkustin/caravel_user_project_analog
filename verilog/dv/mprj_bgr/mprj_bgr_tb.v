@@ -52,14 +52,14 @@ module mprj_bgr_tb;
     // Power supply for POR
     // assign mprj_io[18] = power3;
     // power on reset
-    assign mprj_io[19] = porst;
+    assign mprj_io[12] = porst;
     // Readback from POR (digital HV through analog pad connection)
     // assign status = {mprj_io[19],  mprj_io[18]};
-    assign test_rst = mprj_io[19];
+    assign test_rst = mprj_io[12];
     // Readback from POR (digital LV)
     // assign checkbits = {mprj_io[27:26], mprj_io[12:11]};
 
-    assign test_out = mprj_io[18];
+    assign test_out = mprj_io[11];
 
     always #12.5 clock <= (clock === 1'b0);
 
@@ -81,25 +81,6 @@ module mprj_bgr_tb;
         $finish;
     end
 
-    // initial begin
-    //     wait(status == 2'h1);
-    //     $display("Monitor: mprj_bgr test started");
-	// #100;
-	// if (checkbits != 4'h9) begin
-	// 	$display("Monitor: mprj_bgr test failed");
-	// 	$finish;
-	// end
-    //     wait(status == 2'h3);
-	// #100;
-	// if (checkbits != 4'h5) begin
-	// 	$display("Monitor: mprj_bgr test failed");
-	// 	$finish;
-	// end
-    //     $display("Monitor: mprj_bgr test Passed");
-    //     #10000;
-    //     $finish;
-    // end
-
     // Reset Operation
     initial begin
         RSTB <= 1'b0;
@@ -118,6 +99,11 @@ module mprj_bgr_tb;
         power2 <= 1'b1;
 	#150000;		// Need time to run the managment SoC setup.
 	// power3 <= 1'b1;		// Power up the 2nd POR.
+    if ((test_out != 1'b0)) begin
+        $display("Monitor: mprj_bgr test failed. initial output not right");
+        $finish;
+    end
+    #100
     porst <= 1'b1;
     #100
     if (test_rst != 1'b1) begin

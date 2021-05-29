@@ -28,8 +28,11 @@ void main()
     reg_mprj_datah = 0x00000000;
 
     
+    // Configure mprj_io 11 and 12 as analog (digital in/out = off)
     // mprj_io 14 to 24 are analog pads and cannot be configured
-    // only these pins are used, so no config is needed
+
+    reg_mprj_io_12 = GPIO_MODE_USER_STD_ANALOG;
+    reg_mprj_io_11 = GPIO_MODE_USER_STD_ANALOG;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
