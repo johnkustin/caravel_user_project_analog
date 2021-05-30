@@ -26,6 +26,17 @@ N 4080 -260 4080 -230 { lab=vssa1}
 N 4040 -380 4040 -350 { lab=vccd1}
 N 4040 -380 4080 -380 { lab=vccd1}
 N 3980 -380 4040 -380 { lab=vccd1}
+N 3600 -350 3600 -330 { lab=gpio_analog[5]}
+N 3600 -330 3600 -320 { lab=gpio_analog[5]}
+N 3640 -290 3640 -260 { lab=vssa1}
+N 3600 -260 3640 -260 { lab=vssa1}
+N 3600 -290 3600 -260 { lab=vssa1}
+N 3600 -410 3600 -380 { lab=vccd1}
+N 3600 -410 3640 -410 { lab=vccd1}
+N 3640 -410 3640 -380 { lab=vccd1}
+N 3640 -410 3890 -410 { lab=vccd1}
+N 3600 -260 3600 -220 { lab=vssa1}
+N 3600 -220 3860 -220 { lab=vssa1}
 C {devices/iopin.sym} 3240 -470 0 0 {name=p1 lab=vdda1}
 C {devices/iopin.sym} 3240 -440 0 0 {name=p2 lab=vdda2}
 C {devices/iopin.sym} 3240 -410 0 0 {name=p3 lab=vssa1}
@@ -62,7 +73,6 @@ C {devices/lab_pin.sym} 3770 -180 0 0 {name=l2 sig_type=std_logic lab=vssa1}
 C {devices/lab_pin.sym} 3960 -460 0 1 {name=l3 sig_type=std_logic lab=vccd1}
 C {devices/lab_pin.sym} 4130 -310 0 1 {name=l8 sig_type=std_logic lab=gpio_analog[4]}
 C {devices/lab_pin.sym} 3560 -330 0 0 {name=l9 sig_type=std_logic lab=gpio_analog[5]}
-C {/tmp/kustinj/ee272bclone/lvs/tsmc_bandgap_real_lvs.sym} 3830 -310 0 0 {name=x3}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 4060 -260 0 0 {name=M1
 L=1
 W=5
@@ -91,3 +101,32 @@ sa=0 sb=0 sd=0
 model=pfet_01v8_lvt
 spiceprefix=X
 }
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 3620 -290 0 1 {name=M3
+L=1
+W=5
+nf=1
+mult=20
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 3620 -380 0 1 {name=M4
+L=1
+W=5
+nf=1
+mult=20
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {/tmp/kustinj/ee272bclone/lvs/bandgap_real_lvs.sym} 3830 -310 0 0 {name=x1}
