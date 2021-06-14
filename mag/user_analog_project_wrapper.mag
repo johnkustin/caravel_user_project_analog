@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1623636266
+timestamp 1623640151
 << locali >>
 rect 562528 494355 562562 494414
 rect 563044 494355 563078 494414
@@ -9253,25 +9253,25 @@ rect -100 0 0 704000
 rect 584000 0 584100 704000
 rect -100 -100 584100 0
 use bandgaptop_flat_io  bandgaptop_flat_io_0
-timestamp 1623636266
+timestamp 1623640151
 transform 0 1 -126262 -1 0 913200
 box 422960 603262 502000 669400
-use sky130_fd_pr__pfet_01v8_lvt_V33E7D  sky130_fd_pr__pfet_01v8_lvt_V33E7D_0
-timestamp 1622522911
-transform -1 0 564867 0 -1 454564
-box -2747 -684 2747 684
-use sky130_fd_pr__pfet_01v8_lvt_V33E7D  sky130_fd_pr__pfet_01v8_lvt_V33E7D_1
-timestamp 1622522911
-transform -1 0 564867 0 -1 494866
-box -2747 -684 2747 684
-use sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ  sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ_0
-timestamp 1622522911
-transform 1 0 575027 0 -1 454603
-box -2747 -679 2747 679
 use sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ  sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ_1
 timestamp 1622522911
 transform 1 0 575027 0 -1 494905
 box -2747 -679 2747 679
+use sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ  sky130_fd_pr__nfet_01v8_lvt_ZQXVKQ_0
+timestamp 1622522911
+transform 1 0 575027 0 -1 454603
+box -2747 -679 2747 679
+use sky130_fd_pr__pfet_01v8_lvt_V33E7D  sky130_fd_pr__pfet_01v8_lvt_V33E7D_1
+timestamp 1622522911
+transform -1 0 564867 0 -1 494866
+box -2747 -684 2747 684
+use sky130_fd_pr__pfet_01v8_lvt_V33E7D  sky130_fd_pr__pfet_01v8_lvt_V33E7D_0
+timestamp 1622522911
+transform -1 0 564867 0 -1 454564
+box -2747 -684 2747 684
 << labels >>
 flabel metal3 s 583520 269230 584800 269342 0 FreeSans 1120 0 0 0 gpio_analog[0]
 port 0 nsew signal bidirectional
