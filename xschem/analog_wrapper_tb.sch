@@ -19,52 +19,52 @@ T {caravan} 480 -560 0 0 1 1 {}
 T {management SoC} 150 -490 0 0 0.3 0.3 {}
 N 490 -450 700 -450 { lab=#net1}
 N 490 -410 620 -410 { lab=GND}
-N 490 -370 590 -370 { lab=#net2}
-N 490 -150 640 -150 { lab=#net3}
+N 490 -370 590 -370 { lab=vccd1}
+N 490 -150 640 -150 { lab=#net2}
 N 490 -130 660 -130 { lab=GND}
 N 490 -110 600 -110 { lab=GND}
 N 620 -410 700 -410 { lab=GND}
-N 590 -370 670 -370 { lab=#net2}
+N 590 -370 670 -370 { lab=vccd1}
 N 600 -110 680 -110 { lab=GND}
-N 490 -210 810 -210 { lab=#net4}
-N 490 -230 670 -230 { lab=#net5}
-N 490 -430 590 -430 { lab=#net6}
-N 490 -390 590 -390 { lab=#net7}
-N 490 -350 590 -350 { lab=#net8}
-N 490 -350 590 -350 { lab=#net8}
-N 490 -330 590 -330 { lab=#net9}
-N 480 -310 580 -310 { lab=#net10}
-N 480 -290 580 -290 { lab=#net11}
-N 480 -270 580 -270 { lab=#net12}
-N 490 -250 590 -250 { lab=#net13}
+N 490 -210 810 -210 { lab=#net3}
+N 490 -230 670 -230 { lab=#net4}
+N 490 -430 590 -430 { lab=#net5}
+N 490 -390 590 -390 { lab=#net6}
+N 490 -350 590 -350 { lab=#net7}
+N 490 -350 590 -350 { lab=#net7}
+N 490 -330 590 -330 { lab=#net8}
+N 480 -310 580 -310 { lab=#net9}
+N 480 -290 580 -290 { lab=#net10}
+N 480 -270 580 -270 { lab=#net11}
+N 490 -250 590 -250 { lab=#net12}
 N 490 -190 590 -190 { lab=gpio_analog[17:0]}
-N 490 -170 590 -170 { lab=#net14}
-N 490 -90 590 -90 { lab=#net15}
-N 130 -450 190 -450 { lab=#net16}
-N 130 -430 190 -430 { lab=#net17}
-N 130 -410 190 -410 { lab=#net18}
-N 130 -390 190 -390 { lab=#net19}
-N 130 -370 190 -370 { lab=#net20}
-N 130 -370 190 -370 { lab=#net20}
-N 130 -350 190 -350 { lab=#net21}
-N 130 -350 190 -350 { lab=#net21}
-N 130 -330 190 -330 { lab=#net22}
-N 130 -310 190 -310 { lab=#net23}
-N 130 -290 190 -290 { lab=#net24}
-N 130 -270 190 -270 { lab=#net25}
-N 130 -250 190 -250 { lab=#net26}
-N 130 -230 190 -230 { lab=#net27}
-N 130 -210 190 -210 { lab=#net28}
-N 640 -150 650 -150 { lab=#net3}
+N 490 -170 590 -170 { lab=#net13}
+N 490 -90 590 -90 { lab=#net14}
+N 130 -450 190 -450 { lab=#net15}
+N 130 -430 190 -430 { lab=#net16}
+N 130 -410 190 -410 { lab=#net17}
+N 130 -390 190 -390 { lab=#net18}
+N 130 -370 190 -370 { lab=#net19}
+N 130 -370 190 -370 { lab=#net19}
+N 130 -350 190 -350 { lab=#net20}
+N 130 -350 190 -350 { lab=#net20}
+N 130 -330 190 -330 { lab=#net21}
+N 130 -310 190 -310 { lab=#net22}
+N 130 -290 190 -290 { lab=#net23}
+N 130 -270 190 -270 { lab=#net24}
+N 130 -250 190 -250 { lab=#net25}
+N 130 -230 190 -230 { lab=#net26}
+N 130 -210 190 -210 { lab=#net27}
+N 640 -150 650 -150 { lab=#net2}
 N 590 -190 840 -190 { lab=gpio_analog[17:0]}
 N 860 -180 970 -180 { lab=gpio_analog[5]}
 N 840 -190 850 -170 { lab=gpio_analog[17:0]}
 N 970 -180 1040 -180 { lab=gpio_analog[5]}
 N 850 -200 970 -200 { lab=gpio_analog[4]}
 N 1190 -260 1440 -260 { lab=vout}
-N 1500 -260 1540 -260 { lab=#net29}
-N 1540 -260 1540 -190 { lab=#net29}
-N 1630 -360 1630 -340 { lab=#net31}
+N 1500 -260 1540 -260 { lab=#net28}
+N 1540 -260 1540 -190 { lab=#net28}
+N 1630 -360 1630 -340 { lab=vccd1}
 N 1040 -180 1280 -180 { lab=gpio_analog[5]}
 N 1340 -180 1340 -80 { lab=gpio_analog[5]}
 N 660 -130 680 -130 { lab=GND}
@@ -73,12 +73,12 @@ N 1540 -120 1540 -30 { lab=GND}
 N 1540 -130 1540 -120 { lab=GND}
 N 970 -260 1190 -260 { lab=vout}
 N 1280 -180 1340 -180 { lab=gpio_analog[5]}
-N 670 -370 1630 -370 { lab=#net2}
-N 1630 -370 1630 -360 {}
+N 670 -370 1630 -370 { lab=vccd1}
+N 1630 -370 1630 -360 { lab=vccd1}
 C {user_analog_project_wrapper.sym} 340 -270 0 0 {name=x1}
 C {devices/bus_connect.sym} 840 -190 1 1 {name=l1 lab=gpio_analog[4]}
 C {devices/gnd.sym} 700 -410 0 0 {name=l2 lab=GND}
-C {devices/code_shown.sym} 800 -780 0 0 {name=s1 only_toplevel=false value=".param mc_mm_switch=0
+C {devices/code_shown.sym} 650 -750 0 0 {name=s1 only_toplevel=false value=".param mc_mm_switch=0
 .lib /tmp/kustinj/ee272bclone/open_pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include /tmp/kustinj/ee272bclone/open_pdks/sky130A/libs.tech/ngspice/sky130_fd_pr__model__pnp.model.spice
 .control
